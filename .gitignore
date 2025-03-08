@@ -1,0 +1,5 @@
+Release/*
+IgPatch/Release/*
+*.user
+*.ncb
+!.gitkeep

@@ -132,6 +132,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="D:\IgProject2025\ClientsForTests\ru_1.1.1.129\Bin32Release\$(ProjectName).dll"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -252,7 +253,7 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="copy $(InputPath) $(TargetDir)$(InputFileName)"
+						CommandLine="copy $(InputPath) $(TargetDir)$(InputFileName)&#x0D;&#x0A;"
 						Outputs="$(TargetDir)$(InputFileName)"
 					/>
 				</FileConfiguration>
@@ -265,7 +266,7 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="copy $(InputPath) $(TargetDir)$(InputFileName)"
+						CommandLine="copy $(InputPath) $(TargetDir)$(InputFileName)&#x0D;&#x0A;"
 						Outputs="$(TargetDir)$(InputFileName)"
 					/>
 				</FileConfiguration>
@@ -289,6 +290,14 @@
 		</File>
 		<File
 			RelativePath=".\PatchAi.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PatchDamage.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PatchKick.cpp"
 			>
 		</File>
 		<File

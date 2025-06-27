@@ -45,6 +45,30 @@
 #define _Game_SSystemGlobalEnvironment_pAISystem_Offset_Offset 96
 #define _Game_gEnv 0x1538800
 
-#define _Game_PathOther_EnableReadInDirectory_Address -1
-#define _Game_PathOther_Damage_Address -1
-#define _Game_PathOther_Damage_Address1 -1
+#define _Game_PathOther_EnableReadInDirectory_Address 0x15560C4
+
+#define _Game_PatchDamage_Address -1//0x0FAEB92
+#define _Game_SGameHitInfo_SGameHitInfo_Address 0x0EC9240
+#define _Game_CGameRules_GetClientHitInfoDamage_Address -1//Not found
+#define _Game_CGameRules_AddServerHit_Address 0x0E86800
+
+#define _Game_CGameRules_ProcessServerHit_Address 0x0E86020
+#define _Game_CGameRules_GetActorByEntityId_Address 0x0D94180
+#define _Game_CActor_GetHealth_Vtable_Offset 96
+#define _Game_CGameRules_m_scriptHitInfo_Vtable_Offset 292
+#define _Game_CGameRules_CreateScriptHitInfo_Address 0x0D988A0
+#define _Game_CGameRules_m_serverStateScript_Vtable_Offset 72
+#define _Game_CGameRules_CGameRules_CallScript_Address 0x0E7F190
+
+#define _Game_IConsole_AddCommand_Vtable_Offset 124
+#define _Game_IConsoleCmdArgs_GetArg_Vtable_Offset 8
+#define _Game_IGame_GetIGameFramework_Vtable_Offset 56
+#define _Game_IGameFramework_GetIActorSystem_Vtable_Offset 100
+#define _Game_IActorSystem_CreateActorIterator_Vtable_Offset 28
+#define _Game_IActorIterator_Next_Vtable_Offset 8
+#define _Game_IActor_GetChannelId0_Vtable_Offset 4
+#define _Game_IActor_GetChannelId1_Vtable_Offset 52
+#define _Game_IGameFramework_GetNetChannel_Vtable_Offset 304
+#define _Game_INetChannel_GetProfileId_Vtable_Offset 152
+#define _Game_INetChannel_Disconnect_Vtable_Offset 32
+#define _Game_IActorIterator_Release_Vtable_Offset 16

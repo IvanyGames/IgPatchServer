@@ -3,8 +3,8 @@
 #include <iostream>
 #include "MH/MinHook.h"
 
-//#include "Versions/Ru_1.1.1.129.h"
-#include "Versions/Ru_1.1.1.426.h"
+#include "Versions/Ru_1.1.1.129.h"
+//#include "Versions/Ru_1.1.1.426.h"
 
 ////Include CryString.h////
 
@@ -79,14 +79,57 @@ struct IXmlNode
 	bool getAttr(const char *key, const char **value);
 };
 
+struct IConsoleCmdArgs
+{
+	const char* GetArg( int nIndex );
+};
+
+typedef void (*ConsoleCommandFunc)( IConsoleCmdArgs* );
+
+struct IConsole
+{
+	void AddCommand( const char *sCommand, ConsoleCommandFunc func, int nFlags=0, const char *sHelp=NULL );
+};
+
+struct INetChannel
+{
+	int GetProfileId();
+	void Disconnect( int cause, const char * fmt);
+};
+
+struct IActor
+{
+	unsigned __int16 GetChannelId();
+};
+
+struct IActorIterator
+{
+	IActor* Next();
+	void Release();
+};
+
+struct IActorSystem
+{
+	void CreateActorIterator(IActorIterator **pOutIter);
+};
+
+struct IGameFramework
+{
+	IActorSystem *GetIActorSystem();
+	INetChannel *GetNetChannel(unsigned __int16 channelId);
+};
+
+struct IGame
+{
+	IGameFramework * GetIGameFramework();
+};
+
 struct I3DEngine;
 struct IScriptSystem;
 struct IPhysicalWorld;
 struct ICryPak;
 struct ITimer;
-struct IGame;
 struct IEntitySystem;
-struct IConsole;
 struct ISystem;
 struct ILog;
 struct IAISystem;
@@ -224,7 +267,9 @@ extern SSystemGlobalEnvironment_2011 *gEnv_2011;
 
 extern void PatchAi_PreInit();
 extern void PatchAi_PostInit();
-extern void PatchOther_Init();
+extern void PatchOther_PreInit();
+extern void PatchDamage_PostInit();
+extern void PatchKick_PostInit();
 
 template< typename cData >
 cData vFun_Call(PVOID BaseClass, DWORD vIndex)
